@@ -1,0 +1,13 @@
+.centralizar-tudo{
+    .centralizar-tudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+      }
+      
+}
