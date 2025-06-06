@@ -23,7 +23,13 @@ export default function FormularioTarefa({ adicionar }) {
   return (
     <form onSubmit={enviar}>
       <input placeholder="Título" value={titulo} onChange={e => setTitulo(e.target.value)} />
-      <textarea placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
+      <input
+        type="text"
+        placeholder="Descrição"
+        value={descricao}
+        onChange={e => setDescricao(e.target.value)}
+      />
+
       <div>
         {DIAS.map(d => (
           <label key={d}>

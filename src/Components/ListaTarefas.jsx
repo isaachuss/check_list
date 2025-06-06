@@ -26,19 +26,25 @@ export default function ListaTarefas({ tarefas, toggleConcluida, remover }) {
           {MATERIAS.map(m => <option key={m} value={m}>{m}</option>)}
         </select>
       </div>
-      <ul>
-        {filtradas.map(t => (
-          <li key={t.id} style={{ textDecoration: t.concluida ? "line-through" : "none" }}>
-            <h3>{t.titulo}</h3>
-            <p>{t.descricao}</p>
-            <small>{t.dias.join(", ")} | {t.materia}</small>
-            <button onClick={() => toggleConcluida(t.id)}>
-              {t.concluida ? "Desmarcar" : "Concluir"}
-            </button>
-            <button onClick={() => remover(t.id)}>Remover</button>
-          </li>
-        ))}
-      </ul>
+      
+      {filtradas.length === 0 ? (
+        <p>Nenhuma tarefa.</p>
+      ) : (
+        <ul>
+          {filtradas.map(t => (
+            <li key={t.id} style={{ textDecoration: t.concluida ? "line-through" : "none" }}>
+              <h3>{t.titulo}</h3>
+              <p>{t.descricao}</p>
+              <small>{t.dias.join(", ")} | {t.materia}</small>
+              <button onClick={() => toggleConcluida(t.id)}>
+                {t.concluida ? "Desmarcar" : "Concluir"}
+              </button>
+              <button onClick={() => remover(t.id)}>Remover</button>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
+  
 }
