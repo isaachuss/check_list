@@ -12,8 +12,6 @@ export default function ListaTarefas({ tarefas, toggleConcluida, remover }) {
     (filtroMateria ? t.materia === filtroMateria : true)
   );
 
-  if (filtradas.length === 0) return <p>Nenhuma tarefa.</p>;
-
   return (
     <>
       <div>
